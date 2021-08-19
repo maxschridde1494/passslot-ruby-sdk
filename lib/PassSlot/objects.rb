@@ -42,6 +42,10 @@ module PassSlot
         @values = @engine.update_pass_value(self, placeholderOrValues, value)
       end
     end
+    
+    def destroy!
+      @engine.delete_pass(self)
+    end
 
   end
 
