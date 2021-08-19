@@ -40,7 +40,11 @@ module PassSlot
       resource = "templates/names/#{URI::encode(templateName)}/pass" % (requests.compat.quote(templateName))
       Pass.new(self, create_pass(resource, values, images))
     end
-
+    
+    def delete_pass(pass)
+      resource = "passes/#{pass.passTypeIdentifier}/#{pass.serialNumber}"
+      call :delete, resource
+    end
 
     # @param [PassSlot::Pass] pass Existing Pass
     # @return [String] pkpass binary data
