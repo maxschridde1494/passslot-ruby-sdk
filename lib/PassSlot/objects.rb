@@ -46,6 +46,10 @@ module PassSlot
     def destroy!
       @engine.delete_pass(self)
     end
+    
+    def update_status!(value)
+      @engine.update_status(self, value)
+    end
 
   end
 
