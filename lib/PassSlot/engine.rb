@@ -81,6 +81,11 @@ module PassSlot
       resource = "passes/#{pass.passTypeIdentifier}/#{pass.serialNumber}/values/#{placeholderName}"
       call :put, resource, value: value
     end
+    
+    def update_status(pass, value)
+      resource = "passes/#{pass.passTypeIdentifier}/#{pass.serialNumber}/status"
+      call :put, resource, status: value
+    end
 
     protected
 
